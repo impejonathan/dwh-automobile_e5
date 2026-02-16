@@ -1,0 +1,218 @@
+%%{init: {'themeVariables': { 'fontSize': '26px' }}}%%
+erDiagram
+%% ========================================
+%% DATA SOURCES (BLUE - Empty for space)
+%% ========================================
+SOURCE_BDD_CARTER_CASH_DIMENSIONSPARMODEL {
+}
+SOURCE_BDD_CARTER_CASH_USER_API {
+}
+SOURCE_BDD_CARTER_CASH_PRODUIT {
+}
+SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES {
+}
+SOURCE_BDD_CARTER_CASH_DIMENSIONS {
+}
+SOURCE_DATALAKE_BORNES_IRVE_CSV {
+}
+SOURCE_DATALAKE_NAF_XLS {
+}
+SOURCE_DATALAKE_SIRENE_PARQUET {
+}
+SOURCE_DATALAKE_COMMUNES_CSV {
+}
+
+%% ========================================
+%% DIMENSION TABLES (GREEN)
+%% ========================================
+DIM_USER_API {
+    INT SK_User_API PK "<span style='font-size:26px'>Surrogate Key</span>"
+    INT ID_USER_API_Source "<span style='font-size:26px'>ID source Carter Cash</span>"
+    VARCHAR Username "<span style='font-size:26px'>Nom utilisateur</span>"
+    VARCHAR Email "<span style='font-size:26px'>Email utilisateur</span>"
+    VARCHAR Full_Name "<span style='font-size:26px'>Nom complet</span>"
+    DATE Date_Creation "<span style='font-size:26px'>Date creation compte</span>"
+    DATE Date_Derniere_Connexion "<span style='font-size:26px'>Derniere connexion</span>"
+    DATE Date_Debut_Validite "<span style='font-size:26px'>SCD Type 2</span>"
+    DATE Date_Fin_Validite "<span style='font-size:26px'>SCD Type 2</span>"
+    BOOLEAN Flag_Actuel "<span style='font-size:26px'>SCD Type 2</span>"
+}
+DIM_VEHICULE {
+    INT SK_Vehicule PK "<span style='font-size:26px'>Surrogate Key</span>"
+    VARCHAR Marque "<span style='font-size:26px'>Marque du véhicule</span>"
+    VARCHAR Modele "<span style='font-size:26px'>Modèle du véhicule</span>"
+    INT Annee "<span style='font-size:26px'>Année du modèle</span>"
+    VARCHAR Finition "<span style='font-size:26px'>Finition/Version</span>"
+    INT Largeur "<span style='font-size:26px'>Largeur</span>"
+    INT Hauteur "<span style='font-size:26px'>Hauteur</span>"
+    INT Diametre "<span style='font-size:26px'>Diamètre</span>"
+}
+
+DIM_TEMPS {
+    INT SK_Temps PK "<span style='font-size:26px'>Surrogate Key</span>"
+    DATE Date "<span style='font-size:26px'>Date complete</span>"
+    INT Jour "<span style='font-size:26px'>1-31</span>"
+    INT Mois "<span style='font-size:26px'>1-12</span>"
+    INT Trimestre "<span style='font-size:26px'>1-4</span>"
+    INT Annee "<span style='font-size:26px'>YYYY</span>"
+    VARCHAR Jour_Semaine "<span style='font-size:26px'>Lundi-Dimanche</span>"
+    BOOLEAN Est_Weekend "<span style='font-size:26px'>True/False</span>"
+    VARCHAR Saison "<span style='font-size:26px'>Printemps/Ete/Automne/Hiver</span>"
+}
+DIM_GEOGRAPHIE {
+    INT SK_Geographie PK "<span style='font-size:26px'>Surrogate Key</span>"
+    VARCHAR Code_INSEE "<span style='font-size:26px'>Code commune INSEE</span>"
+    VARCHAR Nom_Commune "<span style='font-size:26px'>Nom de la commune</span>"
+    VARCHAR Code_Postal "<span style='font-size:26px'>Code postal</span>"
+    VARCHAR Reg_Code "<span style='font-size:26px'>Code region</span>"
+    VARCHAR Reg_Nom "<span style='font-size:26px'>Nom region</span>"
+    VARCHAR Dep_Code "<span style='font-size:26px'>Code departement</span>"
+    VARCHAR Dep_Nom "<span style='font-size:26px'>Nom departement</span>"
+    INT Population "<span style='font-size:26px'>Nombre habitants</span>"
+    DECIMAL Superficie_km2 "<span style='font-size:26px'>Superficie en km2</span>"
+    DECIMAL Densite "<span style='font-size:26px'>Habitants par km2</span>"
+    DECIMAL Latitude "<span style='font-size:26px'>Coordonnee GPS</span>"
+    DECIMAL Longitude "<span style='font-size:26px'>Coordonnee GPS</span>"
+}
+DIM_PRODUIT_PNEU {
+    INT SK_Produit PK "<span style='font-size:26px'>Surrogate Key</span>"
+    INT ID_Produit_Source "<span style='font-size:26px'>ID source Carter Cash</span>"
+    VARCHAR URL_Produit "<span style='font-size:26px'>URL produit</span>"
+    VARCHAR Descriptif "<span style='font-size:26px'>Description produit</span>"
+    VARCHAR Marque "<span style='font-size:26px'>Marque pneu</span>"
+    VARCHAR Info_Generale "<span style='font-size:26px'>Info generale</span>"
+    VARCHAR Note "<span style='font-size:26px'>Note client</span>"
+    DATE Date_Debut_Validite "<span style='font-size:26px'>SCD Type 2</span>"
+    DATE Date_Fin_Validite "<span style='font-size:26px'>SCD Type 2</span>"
+    BOOLEAN Flag_Actuel "<span style='font-size:26px'>SCD Type 2</span>"
+}
+DIM_CARACTERISTIQUES_PNEU {
+    INT SK_Caracteristique PK "<span style='font-size:26px'>Surrogate Key</span>"
+    VARCHAR Saisonalite "<span style='font-size:26px'>Ete/Hiver/Toutes saisons</span>"
+    VARCHAR Type_Vehicule "<span style='font-size:26px'>Tourisme/SUV/Utilitaire</span>"
+    CHAR Consommation "<span style='font-size:26px'>A-G</span>"
+    CHAR Indice_Pluie "<span style='font-size:26px'>A-G</span>"
+    INT Bruit "<span style='font-size:26px'>Niveau sonore dB</span>"
+    VARCHAR Runflat "<span style='font-size:26px'>Oui/Non</span>"
+}
+DIM_DIMENSIONS_PNEU {
+    INT SK_Dimension_Pneu PK "<span style='font-size:26px'>Surrogate Key</span>"
+    INT Largeur "<span style='font-size:26px'>Largeur en mm</span>"
+    INT Hauteur "<span style='font-size:26px'>Hauteur en %</span>"
+    INT Diametre "<span style='font-size:26px'>Diametre en pouces</span>"
+    INT Charge "<span style='font-size:26px'>Indice de charge</span>"
+    CHAR Vitesse "<span style='font-size:26px'>Indice de vitesse</span>"
+    VARCHAR Taille_Standard "<span style='font-size:26px'>Format standardise</span>"
+}
+DIM_BORNE_RECHARGE {
+    INT SK_Borne PK "<span style='font-size:26px'>Surrogate Key</span>"
+    VARCHAR ID_Station "<span style='font-size:26px'>ID station source</span>"
+    VARCHAR Nom_Station "<span style='font-size:26px'>Nom de la station</span>"
+    VARCHAR Type_Prise "<span style='font-size:26px'>Type de prise</span>"
+    DECIMAL Puissance_kW "<span style='font-size:26px'>Puissance en kW</span>"
+    VARCHAR Operateur "<span style='font-size:26px'>Operateur reseau</span>"
+    VARCHAR Acces "<span style='font-size:26px'>Gratuit/Payant</span>"
+    VARCHAR Statut "<span style='font-size:26px'>Actif/Inactif</span>"
+    DATE Date_Mise_Service "<span style='font-size:26px'>Date mise en service</span>"
+    VARCHAR code_insee_commune "<span style='font-size:26px'>Code INSEE de la commune</span>"
+    VARCHAR Xlongitude "<span style='font-size:26px'>Longitude</span>"
+    VARCHAR Ylatitude "<span style='font-size:26px'>Latitude</span>"
+    nbre_pdc INT "<span style='font-size:26px'>Nombre de points de charge</span>"
+}
+DIM_ENTREPRISE {
+    INT SK_Entreprise PK "<span style='font-size:26px'>Surrogate Key</span>"
+    VARCHAR SIREN "<span style='font-size:26px'>Numero SIREN</span>"
+    VARCHAR SIRET "<span style='font-size:26px'>Numero SIRET</span>"
+    VARCHAR NAF "<span style='font-size:26px'>Code NAF</span>"
+    VARCHAR Denomination "<span style='font-size:26px'>Nom entreprise</span>"
+    VARCHAR Adresse_Complete "<span style='font-size:26px'>Adresse complete</span>"
+    VARCHAR Code_Commune "<span style='font-size:26px'>Code commune</span>"
+    VARCHAR Tranche_Effectifs "<span style='font-size:26px'>Tranche effectifs</span>"
+    DATE Date_Creation "<span style='font-size:26px'>Date creation</span>"
+    VARCHAR Etat_Administratif "<span style='font-size:26px'>Actif/Ferme</span>"
+    DATE Date_Debut_Validite "<span style='font-size:26px'>SCD Type 2</span>"
+    DATE Date_Fin_Validite "<span style='font-size:26px'>SCD Type 2</span>"
+    BOOLEAN Flag_Actuel "<span style='font-size:26px'>SCD Type 2</span>"
+}
+DIM_ACTIVITE_NAF {
+    INT SK_Activite PK "<span style='font-size:26px'>Surrogate Key</span>"
+    VARCHAR Code_NAF "<span style='font-size:26px'>Code NAF</span>"
+    VARCHAR Intitule_NAF_65 "<span style='font-size:26px'>Intitule NAF 65</span>"
+    VARCHAR Intitule_NAF_40 "<span style='font-size:26px'>Intitule NAF 40</span>"
+    VARCHAR Section "<span style='font-size:26px'>Section NAF</span>"
+    VARCHAR Division "<span style='font-size:26px'>Division NAF</span>"
+}
+
+%% ========================================
+%% FACT TABLES (ORANGE)
+%% ========================================
+FAIT_PRIX_PNEU {
+    INT SK_Temps FK "<span style='font-size:26px'>Cle temps</span>"
+    INT SK_Produit FK "<span style='font-size:26px'>Cle produit</span>"
+    INT SK_Caracteristique FK "<span style='font-size:26px'>Cle caracteristique</span>"
+    INT SK_Dimension_Pneu FK "<span style='font-size:26px'>Cle dimension</span>"
+    DECIMAL Prix_Euro "<span style='font-size:26px'>Prix en euros</span>"
+    DATE Date_Scrap "<span style='font-size:26px'>Date extraction</span>"
+}
+FAIT_DISPONIBILITE_BORNE {
+    INT SK_Temps FK "<span style='font-size:26px'>Cle temps</span>"
+    INT SK_Borne FK "<span style='font-size:26px'>Cle borne</span>"
+    INT SK_Geographie FK "<span style='font-size:26px'>Cle geographie</span>"
+    INT Nombre_Bornes "<span style='font-size:26px'>Nombre de bornes</span>"
+    DECIMAL Puissance_Totale_kW "<span style='font-size:26px'>Puissance totale</span>"
+    DATE Date_MAJ "<span style='font-size:26px'>Date mise a jour</span>"
+}
+FAIT_ENTREPRISE_AUTOMOBILE {
+    INT SK_Temps FK "<span style='font-size:26px'>Cle temps</span>"
+    INT SK_Entreprise FK "<span style='font-size:26px'>Cle entreprise</span>"
+    INT SK_Activite FK "<span style='font-size:26px'>Cle activite NAF</span>"
+    INT SK_Geographie FK "<span style='font-size:26px'>Cle geographie</span>"
+    INT Nombre_Etablissements "<span style='font-size:26px'>Nombre etablissements</span>"
+    INT Estimation_Salaries "<span style='font-size:26px'>Estimation salaries</span>"
+}
+
+%% ========================================
+%% RELATIONSHIPS - SOURCE TO SOURCE
+%% ========================================
+SOURCE_BDD_CARTER_CASH_PRODUIT ||--o{ SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES : "<span style='font-size:29px'>ID_Produit</span>"
+SOURCE_BDD_CARTER_CASH_PRODUIT ||--o{ SOURCE_BDD_CARTER_CASH_DIMENSIONS : "<span style='font-size:29px'>ID_Produit</span>"
+
+%% ========================================
+%% RELATIONSHIPS - SOURCE TO DIMENSION
+%% ========================================
+SOURCE_BDD_CARTER_CASH_USER_API ||--o{ DIM_USER_API : "<span style='font-size:29px'>alimente</span>"
+SOURCE_BDD_CARTER_CASH_DIMENSIONSPARMODEL ||--o{ DIM_VEHICULE : "<span style='font-size:29px'>alimente</span>"
+SOURCE_BDD_CARTER_CASH_PRODUIT ||--o{ DIM_PRODUIT_PNEU : "<span style='font-size:29px'>alimente</span>"
+SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES ||--o{ DIM_CARACTERISTIQUES_PNEU : "<span style='font-size:29px'>alimente</span>"
+SOURCE_BDD_CARTER_CASH_DIMENSIONS ||--o{ DIM_DIMENSIONS_PNEU : "<span style='font-size:29px'>alimente</span>"
+SOURCE_DATALAKE_BORNES_IRVE_CSV ||--o{ DIM_BORNE_RECHARGE : "<span style='font-size:29px'>alimente</span>"
+SOURCE_DATALAKE_BORNES_IRVE_CSV ||--o{ DIM_GEOGRAPHIE : "<span style='font-size:29px'>alimente</span>"
+SOURCE_DATALAKE_COMMUNES_CSV ||--o{ DIM_GEOGRAPHIE : "<span style='font-size:29px'>alimente</span>"
+SOURCE_DATALAKE_SIRENE_PARQUET ||--o{ DIM_ENTREPRISE : "<span style='font-size:29px'>alimente</span>"
+SOURCE_DATALAKE_NAF_XLS ||--o{ DIM_ACTIVITE_NAF : "<span style='font-size:29px'>alimente</span>"
+
+%% ========================================
+%% RELATIONSHIPS - DIMENSION TO FACT
+%% ========================================
+DIM_TEMPS ||--o{ FAIT_PRIX_PNEU : "<span style='font-size:29px'>SK_Temps</span>"
+DIM_PRODUIT_PNEU ||--o{ FAIT_PRIX_PNEU : "<span style='font-size:29px'>SK_Produit</span>"
+DIM_CARACTERISTIQUES_PNEU ||--o{ FAIT_PRIX_PNEU : "<span style='font-size:29px'>SK_Caracteristique</span>"
+DIM_DIMENSIONS_PNEU ||--o{ FAIT_PRIX_PNEU : "<span style='font-size:29px'>SK_Dimension_Pneu</span>"
+DIM_TEMPS ||--o{ FAIT_DISPONIBILITE_BORNE : "<span style='font-size:29px'>SK_Temps</span>"
+DIM_BORNE_RECHARGE ||--o{ FAIT_DISPONIBILITE_BORNE : "<span style='font-size:29px'>SK_Borne</span>"
+DIM_GEOGRAPHIE ||--o{ FAIT_DISPONIBILITE_BORNE : "<span style='font-size:29px'>SK_Geographie</span>"
+DIM_TEMPS ||--o{ FAIT_ENTREPRISE_AUTOMOBILE : "<span style='font-size:29px'>SK_Temps</span>"
+DIM_ENTREPRISE ||--o{ FAIT_ENTREPRISE_AUTOMOBILE : "<span style='font-size:29px'>SK_Entreprise</span>"
+DIM_ACTIVITE_NAF ||--o{ FAIT_ENTREPRISE_AUTOMOBILE : "<span style='font-size:29px'>SK_Activite</span>"
+DIM_GEOGRAPHIE ||--o{ FAIT_ENTREPRISE_AUTOMOBILE : "<span style='font-size:29px'>SK_Geographie</span>"
+
+%% ========================================
+%% STYLING - COLOR CODING
+%% ========================================
+classDef sourceStyle fill:#4A90E2,stroke:#2E5C8A,stroke-width:2px,color:#000000
+classDef dimensionStyle fill:#52C41A,stroke:#389E0D,stroke-width:2px,color:#000000
+classDef factStyle fill:#FA8C16,stroke:#D46B08,stroke-width:2px,color:#000000
+
+class SOURCE_BDD_CARTER_CASH_DIMENSIONSPARMODEL,SOURCE_BDD_CARTER_CASH_USER_API,SOURCE_BDD_CARTER_CASH_PRODUIT,SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES,SOURCE_BDD_CARTER_CASH_DIMENSIONS,SOURCE_DATALAKE_BORNES_IRVE_CSV,SOURCE_DATALAKE_NAF_XLS,SOURCE_DATALAKE_SIRENE_PARQUET,SOURCE_DATALAKE_COMMUNES_CSV sourceStyle
+class DIM_USER_API,DIM_VEHICULE,DIM_TEMPS,DIM_GEOGRAPHIE,DIM_PRODUIT_PNEU,DIM_CARACTERISTIQUES_PNEU,DIM_DIMENSIONS_PNEU,DIM_BORNE_RECHARGE,DIM_ENTREPRISE,DIM_ACTIVITE_NAF dimensionStyle
+class FAIT_PRIX_PNEU,FAIT_DISPONIBILITE_BORNE,FAIT_ENTREPRISE_AUTOMOBILE factStyle

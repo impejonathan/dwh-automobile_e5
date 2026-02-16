@@ -1,0 +1,276 @@
+// ========================================
+// DATA SOURCES (BLUE)
+// ========================================
+
+Table SOURCE_BDD_CARTER_CASH_DIMENSIONSPARMODEL [headercolor: #3498DB] {
+  ID_Source int [pk, increment, not null]
+  Note: "Source: Base de données Carter Cash - Dimensions par modèle"
+}
+
+Table SOURCE_BDD_CARTER_CASH_USER_API [headercolor: #3498DB] {
+  ID_Source int [pk, increment, not null]
+  Note: "Source: Base de données Carter Cash - Utilisateurs API"
+}
+
+Table SOURCE_BDD_CARTER_CASH_PRODUIT [headercolor: #3498DB] {
+  ID_Produit int [pk, not null]
+  Note: "Source: Base de données Carter Cash - Produits"
+}
+
+Table SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES [headercolor: #3498DB] {
+  ID_Caracteristique int [pk, not null]
+  ID_Produit int [not null]
+  Note: "Source: Base de données Carter Cash - Caractéristiques"
+}
+
+Table SOURCE_BDD_CARTER_CASH_DIMENSIONS [headercolor: #3498DB] {
+  ID_Dimension int [pk, not null]
+  ID_Produit int [not null]
+  Note: "Source: Base de données Carter Cash - Dimensions"
+}
+
+Table SOURCE_DATALAKE_BORNES_IRVE_CSV [headercolor: #3498DB] {
+  ID_Source int [pk, increment, not null]
+  Note: "Source: DataLake - Bornes IRVE (CSV)"
+}
+
+Table SOURCE_DATALAKE_NAF_XLS [headercolor: #3498DB] {
+  ID_Source int [pk, increment, not null]
+  Note: "Source: DataLake - Codes NAF (XLS)"
+}
+
+Table SOURCE_DATALAKE_SIRENE_PARQUET [headercolor: #3498DB] {
+  ID_Source int [pk, increment, not null]
+  Note: "Source: DataLake - SIRENE (Parquet)"
+}
+
+Table SOURCE_DATALAKE_COMMUNES_CSV [headercolor: #3498DB] {
+  ID_Source int [pk, increment, not null]
+  Note: "Source: DataLake - Communes (CSV)"
+}
+
+// ========================================
+// DIMENSION TABLES (GREEN)
+// ========================================
+
+Table DIM_USER_API [headercolor: #27AE60] {
+  SK_User_API int [pk, increment, not null, unique]
+  ID_USER_API_Source int
+  Username varchar(255)
+  Email varchar(255)
+  Full_Name varchar(255)
+  Date_Creation date
+  Date_Derniere_Connexion date
+  Date_Debut_Validite date
+  Date_Fin_Validite date
+  Flag_Actuel boolean
+  Note: "Dimension SCD Type 2 - Utilisateurs API"
+}
+
+Table DIM_VEHICULE [headercolor: #27AE60] {
+  SK_Vehicule int [pk, increment, not null, unique]
+  Marque varchar(255)
+  Modele varchar(255)
+  Annee int
+  Finition varchar(255)
+  Largeur int
+  Hauteur int
+  Diametre int
+  Note: "Dimension - Véhicules et modèles"
+}
+
+Table DIM_TEMPS [headercolor: #27AE60] {
+  SK_Temps int [pk, increment, not null, unique]
+  Date date [not null, unique]
+  Jour int
+  Mois int
+  Trimestre int
+  Annee int
+  Jour_Semaine varchar(50)
+  Est_Weekend boolean
+  Saison varchar(50)
+  Note: "Dimension Temps - Calendrier complet"
+}
+
+Table DIM_GEOGRAPHIE [headercolor: #27AE60] {
+  SK_Geographie int [pk, increment, not null, unique]
+  Code_INSEE varchar(10) [unique]
+  Nom_Commune varchar(255)
+  Code_Postal varchar(10)
+  Reg_Code varchar(10)
+  Reg_Nom varchar(255)
+  Dep_Code varchar(10)
+  Dep_Nom varchar(255)
+  Population int
+  Superficie_km2 decimal(10,2)
+  Densite decimal(10,2)
+  Latitude decimal(10,6)
+  Longitude decimal(10,6)
+  Note: "Dimension Géographique - Communes et régions"
+}
+
+Table DIM_PRODUIT_PNEU [headercolor: #27AE60] {
+  SK_Produit int [pk, increment, not null, unique]
+  ID_Produit_Source int
+  URL_Produit varchar(500)
+  Descriptif text
+  Marque varchar(255)
+  Info_Generale text
+  Note varchar(255)
+  Date_Debut_Validite date
+  Date_Fin_Validite date
+  Flag_Actuel boolean
+  Note: "Dimension SCD Type 2 - Produits Pneus"
+}
+
+Table DIM_CARACTERISTIQUES_PNEU [headercolor: #27AE60] {
+  SK_Caracteristique int [pk, increment, not null, unique]
+  Saisonalite varchar(50)
+  Type_Vehicule varchar(100)
+  Consommation char(1)
+  Indice_Pluie char(1)
+  Bruit int
+  Runflat varchar(50)
+  Note: "Dimension - Caractéristiques techniques des pneus"
+}
+
+Table DIM_DIMENSIONS_PNEU [headercolor: #27AE60] {
+  SK_Dimension_Pneu int [pk, increment, not null, unique]
+  Largeur int
+  Hauteur int
+  Diametre int
+  Charge int
+  Vitesse char(1)
+  Taille_Standard varchar(50)
+  Note: "Dimension - Dimensions et spécifications pneus"
+}
+
+Table DIM_BORNE_RECHARGE [headercolor: #27AE60] {
+  SK_Borne int [pk, increment, not null, unique]
+  ID_Station varchar(255)
+  Nom_Station varchar(255)
+  Type_Prise varchar(100)
+  Puissance_kW decimal(10,2)
+  Operateur varchar(255)
+  Acces varchar(100)
+  Statut varchar(50)
+  Date_Mise_Service date
+  code_insee_commune varchar(10)
+  Xlongitude decimal(10,6)
+  Ylatitude decimal(10,6)
+  nbre_pdc int
+  Note: "Dimension - Bornes de recharge électrique IRVE"
+}
+
+Table DIM_ENTREPRISE [headercolor: #27AE60] {
+  SK_Entreprise int [pk, increment, not null, unique]
+  SIREN varchar(9)
+  SIRET varchar(14)
+  NAF varchar(10)
+  Denomination varchar(255)
+  Adresse_Complete text
+  Code_Commune varchar(10)
+  Tranche_Effectifs varchar(50)
+  Date_Creation date
+  Etat_Administratif varchar(50)
+  Date_Debut_Validite date
+  Date_Fin_Validite date
+  Flag_Actuel boolean
+  Note: "Dimension SCD Type 2 - Entreprises"
+}
+
+Table DIM_ACTIVITE_NAF [headercolor: #27AE60] {
+  SK_Activite int [pk, increment, not null, unique]
+  Code_NAF varchar(10) [unique]
+  Intitule_NAF_65 varchar(500)
+  Intitule_NAF_40 varchar(500)
+  Section varchar(10)
+  Division varchar(10)
+  Note: "Dimension - Nomenclature des activités françaises"
+}
+
+// ========================================
+// FACT TABLES (ORANGE)
+// ========================================
+
+Table FAIT_PRIX_PNEU [headercolor: #E67E22] {
+  SK_Temps int [not null]
+  SK_Produit int [not null]
+  SK_Caracteristique int [not null]
+  SK_Dimension_Pneu int [not null]
+  Prix_Euro decimal(10,2)
+  Date_Scrap date
+  
+  indexes {
+    (SK_Temps, SK_Produit, SK_Caracteristique, SK_Dimension_Pneu) [pk]
+  }
+  Note: "Table de faits - Prix des pneus dans le temps"
+}
+
+Table FAIT_DISPONIBILITE_BORNE [headercolor: #E67E22] {
+  SK_Temps int [not null]
+  SK_Borne int [not null]
+  SK_Geographie int [not null]
+  Nombre_prise_disponible int
+  Puissance_Totale_kW decimal(10,2)
+  Date_MAJ date
+  
+  indexes {
+    (SK_Temps, SK_Borne, SK_Geographie) [pk]
+  }
+  Note: "Table de faits - Disponibilité des bornes de recharge"
+}
+
+Table FAIT_ENTREPRISE_AUTOMOBILE [headercolor: #E67E22] {
+  SK_Temps int [not null]
+  SK_Entreprise int [not null]
+  SK_Activite int [not null]
+  SK_Geographie int [not null]
+  Nombre_Etablissements int
+  Estimation_Salaries int
+  
+  indexes {
+    (SK_Temps, SK_Entreprise, SK_Activite, SK_Geographie) [pk]
+  }
+  Note: "Table de faits - Entreprises du secteur automobile"
+}
+
+// ========================================
+// RELATIONSHIPS - SOURCE TO SOURCE
+// ========================================
+
+Ref: SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES.ID_Produit > SOURCE_BDD_CARTER_CASH_PRODUIT.ID_Produit
+Ref: SOURCE_BDD_CARTER_CASH_DIMENSIONS.ID_Produit > SOURCE_BDD_CARTER_CASH_PRODUIT.ID_Produit
+
+// ========================================
+// RELATIONSHIPS - SOURCE TO DIMENSION
+// ========================================
+
+Ref: DIM_USER_API.ID_USER_API_Source - SOURCE_BDD_CARTER_CASH_USER_API.ID_Source
+Ref: DIM_VEHICULE.SK_Vehicule - SOURCE_BDD_CARTER_CASH_DIMENSIONSPARMODEL.ID_Source
+Ref: DIM_PRODUIT_PNEU.ID_Produit_Source - SOURCE_BDD_CARTER_CASH_PRODUIT.ID_Produit
+Ref: DIM_CARACTERISTIQUES_PNEU.SK_Caracteristique - SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES.ID_Caracteristique
+Ref: DIM_DIMENSIONS_PNEU.SK_Dimension_Pneu - SOURCE_BDD_CARTER_CASH_DIMENSIONS.ID_Dimension
+Ref: DIM_BORNE_RECHARGE.SK_Borne - SOURCE_DATALAKE_BORNES_IRVE_CSV.ID_Source
+Ref: DIM_GEOGRAPHIE.SK_Geographie - SOURCE_DATALAKE_BORNES_IRVE_CSV.ID_Source
+Ref: DIM_GEOGRAPHIE.SK_Geographie - SOURCE_DATALAKE_COMMUNES_CSV.ID_Source
+Ref: DIM_ENTREPRISE.SK_Entreprise - SOURCE_DATALAKE_SIRENE_PARQUET.ID_Source
+Ref: DIM_ACTIVITE_NAF.SK_Activite - SOURCE_DATALAKE_NAF_XLS.ID_Source
+
+// ========================================
+// RELATIONSHIPS - DIMENSION TO FACT
+// ========================================
+
+Ref: FAIT_PRIX_PNEU.SK_Temps > DIM_TEMPS.SK_Temps
+Ref: FAIT_PRIX_PNEU.SK_Produit > DIM_PRODUIT_PNEU.SK_Produit
+Ref: FAIT_PRIX_PNEU.SK_Caracteristique > DIM_CARACTERISTIQUES_PNEU.SK_Caracteristique
+Ref: FAIT_PRIX_PNEU.SK_Dimension_Pneu > DIM_DIMENSIONS_PNEU.SK_Dimension_Pneu
+
+Ref: FAIT_DISPONIBILITE_BORNE.SK_Temps > DIM_TEMPS.SK_Temps
+Ref: FAIT_DISPONIBILITE_BORNE.SK_Borne > DIM_BORNE_RECHARGE.SK_Borne
+Ref: FAIT_DISPONIBILITE_BORNE.SK_Geographie > DIM_GEOGRAPHIE.SK_Geographie
+
+Ref: FAIT_ENTREPRISE_AUTOMOBILE.SK_Temps > DIM_TEMPS.SK_Temps
+Ref: FAIT_ENTREPRISE_AUTOMOBILE.SK_Entreprise > DIM_ENTREPRISE.SK_Entreprise
+Ref: FAIT_ENTREPRISE_AUTOMOBILE.SK_Activite > DIM_ACTIVITE_NAF.SK_Activite
+Ref: FAIT_ENTREPRISE_AUTOMOBILE.SK_Geographie > DIM_GEOGRAPHIE.SK_Geographie

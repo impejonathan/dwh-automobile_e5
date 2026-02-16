@@ -1,0 +1,206 @@
+erDiagram
+%% ========================================
+%% DATA SOURCES (BLUE - Empty for space)
+%% ========================================
+SOURCE_BDD_CARTER_CASH_DIMENSIONSPARMODEL {
+}
+SOURCE_BDD_CARTER_CASH_USER_API {
+}
+SOURCE_BDD_CARTER_CASH_PRODUIT {
+}
+SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES {
+}
+SOURCE_BDD_CARTER_CASH_DIMENSIONS {
+}
+SOURCE_DATALAKE_BORNES_IRVE_CSV {
+}
+SOURCE_DATALAKE_NAF_XLS {
+}
+SOURCE_DATALAKE_SIRENE_PARQUET {
+}
+SOURCE_DATALAKE_COMMUNES_CSV {
+}
+
+%% ========================================
+%% DIMENSION TABLES (GREEN)
+%% ========================================
+DIM_USER_API {
+    INT SK_User_API PK
+    INT ID_USER_API_Source
+    VARCHAR Username
+    VARCHAR Email
+    VARCHAR Full_Name
+    DATE Date_Creation
+    DATE Date_Derniere_Connexion
+    DATE Date_Debut_Validite
+    DATE Date_Fin_Validite
+    BOOLEAN Flag_Actuel
+}
+DIM_VEHICULE {
+    INT SK_Vehicule PK
+    VARCHAR Marque
+    VARCHAR Modele
+    INT Annee
+    VARCHAR Finition
+    INT Largeur
+    INT Hauteur
+    INT Diametre
+}
+
+DIM_TEMPS {
+    INT SK_Temps PK
+    DATE Date
+    INT Jour
+    INT Mois
+    INT Trimestre
+    INT Annee
+    VARCHAR Jour_Semaine
+    BOOLEAN Est_Weekend
+    VARCHAR Saison
+}
+DIM_GEOGRAPHIE {
+    INT SK_Geographie PK
+    VARCHAR Code_INSEE
+    VARCHAR Nom_Commune
+    VARCHAR Code_Postal
+    VARCHAR Reg_Code
+    VARCHAR Reg_Nom
+    VARCHAR Dep_Code
+    VARCHAR Dep_Nom
+    INT Population
+    DECIMAL Superficie_km2
+    DECIMAL Densite
+    DECIMAL Latitude
+    DECIMAL Longitude
+}
+DIM_PRODUIT_PNEU {
+    INT SK_Produit PK
+    INT ID_Produit_Source
+    VARCHAR URL_Produit
+    VARCHAR Descriptif
+    VARCHAR Marque
+    VARCHAR Info_Generale
+    VARCHAR Note
+    DATE Date_Debut_Validite
+    DATE Date_Fin_Validite
+    BOOLEAN Flag_Actuel
+}
+DIM_CARACTERISTIQUES_PNEU {
+    INT SK_Caracteristique PK
+    VARCHAR Saisonalite
+    VARCHAR Type_Vehicule
+    CHAR Consommation
+    CHAR Indice_Pluie
+    INT Bruit
+    VARCHAR Runflat
+}
+DIM_DIMENSIONS_PNEU {
+    INT SK_Dimension_Pneu PK
+    INT Largeur
+    INT Hauteur
+    INT Diametre
+    INT Charge
+    CHAR Vitesse
+    VARCHAR Taille_Standard
+}
+DIM_BORNE_RECHARGE {
+    INT SK_Borne PK
+    VARCHAR ID_Station
+    VARCHAR Nom_Station
+    VARCHAR Type_Prise
+    DECIMAL Puissance_kW
+    VARCHAR Operateur
+    VARCHAR Acces
+    VARCHAR Statut
+    DATE Date_Mise_Service
+    VARCHAR code_insee_commune 
+    VARCHAR Xlongitude 
+    VARCHAR Ylatitude 
+    nbre_pdc INT
+}
+DIM_ENTREPRISE {
+    INT SK_Entreprise PK
+    VARCHAR SIREN
+    VARCHAR SIRET 
+    VARCHAR NAF
+    VARCHAR Denomination
+    VARCHAR Adresse_Complete
+    VARCHAR Code_Commune
+    VARCHAR Tranche_Effectifs
+    DATE Date_Creation
+    VARCHAR Etat_Administratif
+    DATE Date_Debut_Validite
+    DATE Date_Fin_Validite
+    BOOLEAN Flag_Actuel
+}
+DIM_ACTIVITE_NAF {
+    INT SK_Activite PK
+    VARCHAR Code_NAF
+    VARCHAR Intitule_NAF_65
+    VARCHAR Intitule_NAF_40
+    VARCHAR Section
+    VARCHAR Division
+}
+
+%% ========================================
+%% FACT TABLES (ORANGE)
+%% ========================================
+FAIT_PRIX_PNEU {
+    INT SK_Temps FK
+    INT SK_Produit FK
+    INT SK_Caracteristique FK
+    INT SK_Dimension_Pneu FK
+    DECIMAL Prix_Euro
+    DATE Date_Scrap
+}
+FAIT_DISPONIBILITE_BORNE {
+    INT SK_Temps FK
+    INT SK_Borne FK
+    INT SK_Geographie FK
+    INT Nombre_prise_disponible
+    DECIMAL Puissance_Totale_kW
+    DATE Date_MAJ
+}
+FAIT_ENTREPRISE_AUTOMOBILE {
+    INT SK_Temps FK
+    INT SK_Entreprise FK
+    INT SK_Activite FK
+    INT SK_Geographie FK
+    INT Nombre_Etablissements
+    INT Estimation_Salaries
+}
+
+%% ========================================
+%% RELATIONSHIPS - SOURCE TO SOURCE
+%% ========================================
+SOURCE_BDD_CARTER_CASH_PRODUIT ||--o{ SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES : "ID_Produit"
+SOURCE_BDD_CARTER_CASH_PRODUIT ||--o{ SOURCE_BDD_CARTER_CASH_DIMENSIONS : "ID_Produit"
+
+%% ========================================
+%% RELATIONSHIPS - SOURCE TO DIMENSION
+%% ========================================
+SOURCE_BDD_CARTER_CASH_USER_API ||--o{ DIM_USER_API : "alimente"
+SOURCE_BDD_CARTER_CASH_DIMENSIONSPARMODEL ||--o{ DIM_VEHICULE : "alimente"
+SOURCE_BDD_CARTER_CASH_PRODUIT ||--o{ DIM_PRODUIT_PNEU : "alimente"
+SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES ||--o{ DIM_CARACTERISTIQUES_PNEU : "alimente"
+SOURCE_BDD_CARTER_CASH_DIMENSIONS ||--o{ DIM_DIMENSIONS_PNEU : "alimente"
+SOURCE_DATALAKE_BORNES_IRVE_CSV ||--o{ DIM_BORNE_RECHARGE : "alimente"
+SOURCE_DATALAKE_BORNES_IRVE_CSV ||--o{ DIM_GEOGRAPHIE : "alimente"
+SOURCE_DATALAKE_COMMUNES_CSV ||--o{ DIM_GEOGRAPHIE : "alimente"
+SOURCE_DATALAKE_SIRENE_PARQUET ||--o{ DIM_ENTREPRISE : "alimente"
+SOURCE_DATALAKE_NAF_XLS ||--o{ DIM_ACTIVITE_NAF : "alimente"
+
+%% ========================================
+%% RELATIONSHIPS - DIMENSION TO FACT
+%% ========================================
+DIM_TEMPS ||--o{ FAIT_PRIX_PNEU : "SK_Temps"
+DIM_PRODUIT_PNEU ||--o{ FAIT_PRIX_PNEU : "SK_Produit"
+DIM_CARACTERISTIQUES_PNEU ||--o{ FAIT_PRIX_PNEU : "SK_Caracteristique"
+DIM_DIMENSIONS_PNEU ||--o{ FAIT_PRIX_PNEU : "SK_Dimension_Pneu"
+DIM_TEMPS ||--o{ FAIT_DISPONIBILITE_BORNE : "SK_Temps"
+DIM_BORNE_RECHARGE ||--o{ FAIT_DISPONIBILITE_BORNE : "SK_Borne"
+DIM_GEOGRAPHIE ||--o{ FAIT_DISPONIBILITE_BORNE : "SK_Geographie"
+DIM_TEMPS ||--o{ FAIT_ENTREPRISE_AUTOMOBILE : "SK_Temps"
+DIM_ENTREPRISE ||--o{ FAIT_ENTREPRISE_AUTOMOBILE : "SK_Entreprise"
+DIM_ACTIVITE_NAF ||--o{ FAIT_ENTREPRISE_AUTOMOBILE : "SK_Activite"
+DIM_GEOGRAPHIE ||--o{ FAIT_ENTREPRISE_AUTOMOBILE : "SK_Geographie"

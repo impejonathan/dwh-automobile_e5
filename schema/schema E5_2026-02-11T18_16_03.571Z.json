@@ -1,0 +1,2042 @@
+{
+  "tables": [
+    {
+      "id": "omc97-vRlmo73s_FRkMkJ",
+      "name": "SOURCE_BDD_CARTER_CASH_DIMENSIONSPARMODEL",
+      "comment": "Source: Base de données Carter Cash - Dimensions par modèle",
+      "color": "#3498DB",
+      "fields": [
+        {
+          "id": "aJ1DUKS286IY5-0BuyAcT",
+          "name": "ID_Source",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": -481.39455399412986,
+      "y": -609.123392561032
+    },
+    {
+      "id": "EY97i-Eka8X9DIVoWDRyu",
+      "name": "SOURCE_BDD_CARTER_CASH_USER_API",
+      "comment": "Source: Base de données Carter Cash - Utilisateurs API",
+      "color": "#3498DB",
+      "fields": [
+        {
+          "id": "R7QXAWupsasUFYvDLM5DZ",
+          "name": "ID_Source",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": -965.7716951792656,
+      "y": -611.4774687938948
+    },
+    {
+      "id": "I8hGPPZg8UcwVvLW3SFnv",
+      "name": "SOURCE_BDD_CARTER_CASH_PRODUIT",
+      "comment": "Source: Base de données Carter Cash - Produits",
+      "color": "#3498DB",
+      "fields": [
+        {
+          "id": "sggul1IqVJ1zOpF5Oq17h",
+          "name": "ID_Produit",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 335.5868504200987,
+      "y": -600.8453183794857
+    },
+    {
+      "id": "UwjczNOHIeNvrNCgaQOaJ",
+      "name": "SOURCE_BDD_CARTER_CASH_CARACTERISTIQUES",
+      "comment": "Source: Base de données Carter Cash - Caractéristiques",
+      "color": "#3498DB",
+      "fields": [
+        {
+          "id": "XJmz6UPxPWE5RxgeB3U51",
+          "name": "ID_Caracteristique",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "b1PzcuKvjmR8EbBYrW6R4",
+          "name": "ID_Produit",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 267.983290762219,
+      "y": -355.1792229051886
+    },
+    {
+      "id": "QLe3ZMMHTAzJ-kTqgEiLm",
+      "name": "SOURCE_BDD_CARTER_CASH_DIMENSIONS",
+      "comment": "Source: Base de données Carter Cash - Dimensions",
+      "color": "#3498DB",
+      "fields": [
+        {
+          "id": "AxgT-5fvhGwSNLO3v_F7O",
+          "name": "ID_Dimension",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "TJubgQj30p3TFToeLmP4z",
+          "name": "ID_Produit",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 896.0796534517042,
+      "y": -353.80147424134395
+    },
+    {
+      "id": "4GQ_PSdTGfArVFiyZj3Mb",
+      "name": "SOURCE_DATALAKE_BORNES_IRVE_CSV",
+      "comment": "Source: DataLake - Bornes IRVE (CSV)",
+      "color": "#3498DB",
+      "fields": [
+        {
+          "id": "Z90UnDnk9zQ1747SrqGTh",
+          "name": "ID_Source",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 1477.2836617238981,
+      "y": -617.0866892124182
+    },
+    {
+      "id": "U9MB3SDaHksu3yTxjU58a",
+      "name": "SOURCE_DATALAKE_NAF_XLS",
+      "comment": "Source: DataLake - Codes NAF (XLS)",
+      "color": "#3498DB",
+      "fields": [
+        {
+          "id": "XPKLiJxrje_AsNZHQEa2M",
+          "name": "ID_Source",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 3977.0232143591875,
+      "y": -478.1180604939291
+    },
+    {
+      "id": "B3TEkBBUVLMEB_l7rKbyz",
+      "name": "SOURCE_DATALAKE_SIRENE_PARQUET",
+      "comment": "Source: DataLake - SIRENE (Parquet)",
+      "color": "#3498DB",
+      "fields": [
+        {
+          "id": "nSgoPaRDh4R6GKTlm6ce4",
+          "name": "ID_Source",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 3229.1045198346164,
+      "y": -597.6337054249383
+    },
+    {
+      "id": "EiU34bQe1gKSyhEt9WY63",
+      "name": "SOURCE_DATALAKE_COMMUNES_CSV",
+      "comment": "Source: DataLake - Communes (CSV)",
+      "color": "#3498DB",
+      "fields": [
+        {
+          "id": "TmQWXYkIiObhiN3_ZHFhq",
+          "name": "ID_Source",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 2433.9597626346886,
+      "y": -593.5017746580486
+    },
+    {
+      "id": "yrarXv_AE5g5epPaVV1YY",
+      "name": "DIM_USER_API",
+      "comment": "Dimension SCD Type 2 - Utilisateurs API",
+      "color": "#27AE60",
+      "fields": [
+        {
+          "id": "mcIFhFDOO6SAaZMxKk8CK",
+          "name": "SK_User_API",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "LvU8vWqBnbs6k1xY7DA7h",
+          "name": "ID_USER_API_Source",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "wL6t6Ogj7dumSn-Z_kJHG",
+          "name": "Username",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Us-fqy46iiY02gHwuH3SI",
+          "name": "Email",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "X_FxgRwcHBC2Jwmb34dMo",
+          "name": "Full_Name",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "h5sywmOmF-_HDEk1Jxbp6",
+          "name": "Date_Creation",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "dUtnkt6FfC54fLWdUYnUT",
+          "name": "Date_Derniere_Connexion",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "kmsUMP4ZRYv47faGQZPEX",
+          "name": "Date_Debut_Validite",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "qo2VDI6zSzhGMigeuxqyD",
+          "name": "Date_Fin_Validite",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "L5tOskvfNQooA2IO8voVB",
+          "name": "Flag_Actuel",
+          "type": "BOOLEAN",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": -1050.2733560411439,
+      "y": -246.85613290175786
+    },
+    {
+      "id": "d67oGECvmnod5-7DXZydx",
+      "name": "DIM_VEHICULE",
+      "comment": "Dimension - Véhicules et modèles",
+      "color": "#27AE60",
+      "fields": [
+        {
+          "id": "XgvhWJtH26vz8LnCjtmiC",
+          "name": "SK_Vehicule",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "qqD7FOw6MdLkzNl0ArxaZ",
+          "name": "Marque",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "KJFYkaxWloA4E8s5_yrmJ",
+          "name": "Modele",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "BU4m-aAhbjPHCEGbzxiyI",
+          "name": "Annee",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "keGTcdAbNtgJKwXJdIhLF",
+          "name": "Finition",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "QVNoAt0Pq_oJVe3GHKcpe",
+          "name": "Largeur",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pJw1-WDt7sfZTfJaPsylX",
+          "name": "Hauteur",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "GwKJJ2YICidSiI9su3jXO",
+          "name": "Diametre",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": -426.18543028318607,
+      "y": -243.96968438640175
+    },
+    {
+      "id": "IA1qUKN5ehorwG6jCf3UB",
+      "name": "DIM_TEMPS",
+      "comment": "Dimension Temps - Calendrier complet",
+      "color": "#27AE60",
+      "fields": [
+        {
+          "id": "Rx9INHGsXFbPWeNdvdBnK",
+          "name": "SK_Temps",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "GSYp-bk8g9kuvsSfF7c-m",
+          "name": "Date",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "wcU3BIikTw2IMseXMpr0P",
+          "name": "Jour",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "dZOBIioAdzlMhFAh_aYGj",
+          "name": "Mois",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Pd3CwkT76SE9IKcRu_7wC",
+          "name": "Trimestre",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "hYXmsOpKsh1bnEMKCEZAe",
+          "name": "Annee",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "cdqgL3OvdOHuBrwqT9X0n",
+          "name": "Jour_Semaine",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Ek_V3VPhdEv81hi639XHc",
+          "name": "Est_Weekend",
+          "type": "BOOLEAN",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "S95ChTI2ahGt-4npIU_yO",
+          "name": "Saison",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 1527.9824686854531,
+      "y": 275.6278808601294
+    },
+    {
+      "id": "fEOeJtJZ-zuDtXei41FbA",
+      "name": "DIM_GEOGRAPHIE",
+      "comment": "Dimension Géographique - Communes et régions",
+      "color": "#27AE60",
+      "fields": [
+        {
+          "id": "iGZ7iic_XD33_eWKQZkt0",
+          "name": "SK_Geographie",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "-f8xXLfVOUXNHulX06fLU",
+          "name": "Code_INSEE",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "moZGJ7BrMRbyE8LZ8MJOi",
+          "name": "Nom_Commune",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "rPGp0-fwYyoybqXmNmP1v",
+          "name": "Code_Postal",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "GmUyHf0oUPXYmGsvC1TUV",
+          "name": "Reg_Code",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "6B4cMVebGPtg4_Txezwod",
+          "name": "Reg_Nom",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "cUL_lact17kXb5PBD_JEw",
+          "name": "Dep_Code",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "gdGRGM3oIFm7oCqFSKaHz",
+          "name": "Dep_Nom",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "5_BDvzDOIbMlej61nLfJe",
+          "name": "Population",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "hrYpvyHx_5A-UVChv1XkN",
+          "name": "Superficie_km2",
+          "type": "DECIMAL(10,2)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "TTHewJWsEl_CDEV153KaS",
+          "name": "Densite",
+          "type": "DECIMAL(10,2)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "AFiwkjsMWkBbu46z9aq8B",
+          "name": "Latitude",
+          "type": "DECIMAL(10,6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "z6v9qob6LCfJiyfwY3aV6",
+          "name": "Longitude",
+          "type": "DECIMAL(10,6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 2736.8116166573823,
+      "y": 278.9218133298356
+    },
+    {
+      "id": "svL3VUm1WjKwwsgA4suyh",
+      "name": "DIM_PRODUIT_PNEU",
+      "comment": "Dimension SCD Type 2 - Produits Pneus",
+      "color": "#27AE60",
+      "fields": [
+        {
+          "id": "Dib6ti3NEExVPItnV7zxX",
+          "name": "SK_Produit",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "n_WaguKVQdnzDVUa2Vvb6",
+          "name": "ID_Produit_Source",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "g0cXHFV6i7Jf13R1Rv7JB",
+          "name": "URL_Produit",
+          "type": "VARCHAR(500)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "MXG5nttJXrvBtTiTzLs1H",
+          "name": "Descriptif",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Rft1Qx-zLUQW6e49WR-DT",
+          "name": "Marque",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "dPL7Yo9PvV-RIgtpHJlP4",
+          "name": "Info_Generale",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "-ZWEZXp1jJuXFlB-62nXQ",
+          "name": "Note",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "_986_9oUPNNUJqAxi2vgf",
+          "name": "Date_Debut_Validite",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "lM6J_DD-peZzozMJPA3Ko",
+          "name": "Date_Fin_Validite",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "UNSJDME4KCCnEMuL8K65j",
+          "name": "Flag_Actuel",
+          "type": "BOOLEAN",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": -586.810719792481,
+      "y": 330.66236231345056
+    },
+    {
+      "id": "LYJOV_9JIzeeCc0anu53z",
+      "name": "DIM_CARACTERISTIQUES_PNEU",
+      "comment": "Dimension - Caractéristiques techniques des pneus",
+      "color": "#27AE60",
+      "fields": [
+        {
+          "id": "hKy70LJt-LMw0fxXQdyi1",
+          "name": "SK_Caracteristique",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "LNBVNCQ8NOLNY6ef4YxYP",
+          "name": "Saisonalite",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "c-n1hNwKe_uV8kBbhSf8o",
+          "name": "Type_Vehicule",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "qh7cskRgBRjdF5I1rf02t",
+          "name": "Consommation",
+          "type": "CHAR(1)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ahIPnEIamVBeNzxXkNCuh",
+          "name": "Indice_Pluie",
+          "type": "CHAR(1)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "wYaHgj8ZqDgJ8gls3g_ZT",
+          "name": "Bruit",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "meflKnsDY7CyHDwxdV2Fl",
+          "name": "Runflat",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 151.18175609197533,
+      "y": 54.225224280847215
+    },
+    {
+      "id": "C95SSWrJHkbIUUm899hsA",
+      "name": "DIM_DIMENSIONS_PNEU",
+      "comment": "Dimension - Dimensions et spécifications pneus",
+      "color": "#27AE60",
+      "fields": [
+        {
+          "id": "PXmBxk8u7R4Ol08aCFYar",
+          "name": "SK_Dimension_Pneu",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "gYcXa-TcqPP27Ir-Gtr9f",
+          "name": "Largeur",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "-IZDKDrNfD_9LLxwuAvQb",
+          "name": "Hauteur",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "kAxdDaIOMkTGjT7Rw61nm",
+          "name": "Diametre",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "OFXU5dFNExDsXTHVVgE8z",
+          "name": "Charge",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "4gnDsg9Gz5rYbN-reit4C",
+          "name": "Vitesse",
+          "type": "CHAR(1)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "3bOY_hmtbo06wRlYN7bPT",
+          "name": "Taille_Standard",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 802.2208570767566,
+      "y": 145.52992450140448,
+      "locked": false
+    },
+    {
+      "id": "fF_zIvWRZwt8vsQIabhlc",
+      "name": "DIM_BORNE_RECHARGE",
+      "comment": "Dimension - Bornes de recharge électrique IRVE",
+      "color": "#27AE60",
+      "fields": [
+        {
+          "id": "epDSXdy6ICRcxbR7bT-RY",
+          "name": "SK_Borne",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "wlHiI2RXmlD554lpuYQSc",
+          "name": "ID_Station",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "eD_X1wy4RD2MFhOwx4Adz",
+          "name": "Nom_Station",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "O8xzGVuGxUf6gYkIVbtCF",
+          "name": "Type_Prise",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "KRBcEf3KXlrBa-8xJyWXK",
+          "name": "Puissance_kW",
+          "type": "DECIMAL(10,2)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ylG0qr73bWQ4zYrayDUcR",
+          "name": "Operateur",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "yfVu1hgd6et2m3jVAMyFP",
+          "name": "Acces",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Rt8xmZWcwG-CmO5NdPzan",
+          "name": "Statut",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "LUdCYRjH7cY57ASX_0FzW",
+          "name": "Date_Mise_Service",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "PLIvICgFTY_tdMb94VCiW",
+          "name": "code_insee_commune",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Oxi-KUTkbYmpS6AyNjfUM",
+          "name": "Xlongitude",
+          "type": "DECIMAL(10,6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "-8Blk-2siKmcy687tHFhe",
+          "name": "Ylatitude",
+          "type": "DECIMAL(10,6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "PPF62z1M3auGo042-PevY",
+          "name": "nbre_pdc",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 2447.3890832269467,
+      "y": -314.37914080774067
+    },
+    {
+      "id": "OMxJlaaA_-ZjUn-HT_g8Z",
+      "name": "DIM_ENTREPRISE",
+      "comment": "Dimension SCD Type 2 - Entreprises",
+      "color": "#27AE60",
+      "fields": [
+        {
+          "id": "jiSu7F84eaznWDjO1OqIv",
+          "name": "SK_Entreprise",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "oH8q9AHZITPJGKMe5_jIT",
+          "name": "SIREN",
+          "type": "VARCHAR(9)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "yUlBooCEsf9cvFr4w56Oj",
+          "name": "SIRET",
+          "type": "VARCHAR(14)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "lkndG_ijnBHjkXSSxOdqs",
+          "name": "NAF",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "KslPfd-sxdaZlpv92qjyM",
+          "name": "Denomination",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "fdcKEzAMPTeWwpmw8os3e",
+          "name": "Adresse_Complete",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pJAmcj47G7YHq_3w5OF8d",
+          "name": "Code_Commune",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Uo6EQ9QdJWYeaxUM73rlQ",
+          "name": "Tranche_Effectifs",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "cAnjGRyCX3vwvZcAfl_Ua",
+          "name": "Date_Creation",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "JGaY3HIUO-wvIHDbc334D",
+          "name": "Etat_Administratif",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Dwwv9Ga97KHdQJn38l-xv",
+          "name": "Date_Debut_Validite",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "TXNyk-qmGw9Ql5Js4_GPm",
+          "name": "Date_Fin_Validite",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "s1zKFh0WIgb1_TWBEWv1_",
+          "name": "Flag_Actuel",
+          "type": "BOOLEAN",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 3380.2345571654732,
+      "y": -305.91977701543385
+    },
+    {
+      "id": "4erQKNB44tBNbQPnWnRIa",
+      "name": "DIM_ACTIVITE_NAF",
+      "comment": "Dimension - Nomenclature des activités françaises",
+      "color": "#27AE60",
+      "fields": [
+        {
+          "id": "zngdfloZh2nmsLgK5r3oA",
+          "name": "SK_Activite",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "9WMTw82b7JMAGVzECR_Qy",
+          "name": "Code_NAF",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "sApMgua-xrlzzEGYJ-nK7",
+          "name": "Intitule_NAF_65",
+          "type": "VARCHAR(500)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "cWPi1HNhYdrk3pYxtTL8d",
+          "name": "Intitule_NAF_40",
+          "type": "VARCHAR(500)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "WKoN9WK3-SpvmIgBoSuTy",
+          "name": "Section",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "rGsaURjuq8TLeBBWqJCy5",
+          "name": "Division",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 3441.2365682316513,
+      "y": 559.9985782674695
+    },
+    {
+      "id": "nadceD4VL5DdGPrjL_gLi",
+      "name": "FAIT_PRIX_PNEU",
+      "comment": "Table de faits - Prix des pneus dans le temps",
+      "color": "#E67E22",
+      "fields": [
+        {
+          "id": "YxpBohh_ioV0XiotryUdX",
+          "name": "SK_Temps",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "2U8nSLWwftoYBXLizBv-l",
+          "name": "SK_Produit",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "0XZRFW8fSIaWVOQxM9oew",
+          "name": "SK_Caracteristique",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "2_OPTTq29lmSr2q2AyUbk",
+          "name": "SK_Dimension_Pneu",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "GxAIAUAtmp8-W_rUsBm0E",
+          "name": "Prix_Euro",
+          "type": "DECIMAL(10,2)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "YEYs7u0Homj_KMj7gHB_v",
+          "name": "Date_Scrap",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 0,
+          "fields": [
+            "SK_Temps",
+            "SK_Produit",
+            "SK_Caracteristique",
+            "SK_Dimension_Pneu"
+          ],
+          "name": "FAIT_PRIX_PNEU_index_0",
+          "unique": false
+        }
+      ],
+      "x": 800.3721829146208,
+      "y": 776.8011878605126
+    },
+    {
+      "id": "SFAcLbvFOKGtaitADAI-r",
+      "name": "FAIT_DISPONIBILITE_BORNE",
+      "comment": "Table de faits - Disponibilité des bornes de recharge",
+      "color": "#E67E22",
+      "fields": [
+        {
+          "id": "Qt59GxOuWGXBATB4RXyGz",
+          "name": "SK_Temps",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "-aap3JXAm5a-Xbxj7jYcV",
+          "name": "SK_Borne",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "PVxSybmx-ZNHU8tpaO4y7",
+          "name": "SK_Geographie",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "DfAgo9obtzCBuQLkjPgpA",
+          "name": "Nombre_prise_disponible",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ppHdEO9m5eghKTA8iWBKR",
+          "name": "Puissance_Totale_kW",
+          "type": "DECIMAL(10,2)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "SZ-82nDcDF3RBbFrfjuDd",
+          "name": "Date_MAJ",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 1,
+          "fields": [
+            "SK_Temps",
+            "SK_Borne",
+            "SK_Geographie"
+          ],
+          "name": "FAIT_DISPONIBILITE_BORNE_index_1",
+          "unique": false
+        }
+      ],
+      "x": 1616.798997169832,
+      "y": 837.8602088486546
+    },
+    {
+      "id": "FwiUNREkL1Aiba_uWjThC",
+      "name": "FAIT_ENTREPRISE_AUTOMOBILE",
+      "comment": "Table de faits - Entreprises du secteur automobile",
+      "color": "#E67E22",
+      "fields": [
+        {
+          "id": "CuS6D6if3z3nT_KqA_Jdq",
+          "name": "SK_Temps",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "X-Bi4ChaBobzBNpOM7uBu",
+          "name": "SK_Entreprise",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "h8cKVIceStnCIHI-ddKZU",
+          "name": "SK_Activite",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ad86o5WcCpG7d3up4zd9U",
+          "name": "SK_Geographie",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Q25oMlOyt4pDr1Z2mKh3D",
+          "name": "Nombre_Etablissements",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Y9BFj8E3f9fP70sL0YCls",
+          "name": "Estimation_Salaries",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 2,
+          "fields": [
+            "SK_Temps",
+            "SK_Entreprise",
+            "SK_Activite",
+            "SK_Geographie"
+          ],
+          "name": "FAIT_ENTREPRISE_AUTOMOBILE_index_2",
+          "unique": false
+        }
+      ],
+      "x": 2661.8448756983544,
+      "y": 867.5701138276515
+    }
+  ],
+  "relationships": [
+    {
+      "name": " ",
+      "startTableId": "UwjczNOHIeNvrNCgaQOaJ",
+      "endTableId": "I8hGPPZg8UcwVvLW3SFnv",
+      "endFieldId": "sggul1IqVJ1zOpF5Oq17h",
+      "startFieldId": "b1PzcuKvjmR8EbBYrW6R4",
+      "id": "2pKQkCsSiRbQoTm2YHW6X",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "QLe3ZMMHTAzJ-kTqgEiLm",
+      "endTableId": "I8hGPPZg8UcwVvLW3SFnv",
+      "endFieldId": "sggul1IqVJ1zOpF5Oq17h",
+      "startFieldId": "TJubgQj30p3TFToeLmP4z",
+      "id": "ZNlQOfScXfljOKVywLrnU",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "",
+      "startTableId": "yrarXv_AE5g5epPaVV1YY",
+      "endTableId": "EY97i-Eka8X9DIVoWDRyu",
+      "endFieldId": "R7QXAWupsasUFYvDLM5DZ",
+      "startFieldId": "LvU8vWqBnbs6k1xY7DA7h",
+      "id": "MNSwoj0I7E1UxtER76uEs",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "d67oGECvmnod5-7DXZydx",
+      "endTableId": "omc97-vRlmo73s_FRkMkJ",
+      "endFieldId": "aJ1DUKS286IY5-0BuyAcT",
+      "startFieldId": "XgvhWJtH26vz8LnCjtmiC",
+      "id": "OBpFetvo7DskZw194-uj5",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "svL3VUm1WjKwwsgA4suyh",
+      "endTableId": "I8hGPPZg8UcwVvLW3SFnv",
+      "endFieldId": "sggul1IqVJ1zOpF5Oq17h",
+      "startFieldId": "n_WaguKVQdnzDVUa2Vvb6",
+      "id": "fduMxDO65Ppp8fVcurNVu",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "LYJOV_9JIzeeCc0anu53z",
+      "endTableId": "UwjczNOHIeNvrNCgaQOaJ",
+      "endFieldId": "XJmz6UPxPWE5RxgeB3U51",
+      "startFieldId": "hKy70LJt-LMw0fxXQdyi1",
+      "id": "OhEqFmqmcOQCyhjAqqTnd",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "C95SSWrJHkbIUUm899hsA",
+      "endTableId": "QLe3ZMMHTAzJ-kTqgEiLm",
+      "endFieldId": "AxgT-5fvhGwSNLO3v_F7O",
+      "startFieldId": "PXmBxk8u7R4Ol08aCFYar",
+      "id": "dJFr2j0_N3XYTcpVWpnSz",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "fF_zIvWRZwt8vsQIabhlc",
+      "endTableId": "4GQ_PSdTGfArVFiyZj3Mb",
+      "endFieldId": "Z90UnDnk9zQ1747SrqGTh",
+      "startFieldId": "epDSXdy6ICRcxbR7bT-RY",
+      "id": "rpD3bxNECNLGpjYr3vK15",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "fEOeJtJZ-zuDtXei41FbA",
+      "endTableId": "4GQ_PSdTGfArVFiyZj3Mb",
+      "endFieldId": "Z90UnDnk9zQ1747SrqGTh",
+      "startFieldId": "iGZ7iic_XD33_eWKQZkt0",
+      "id": "307-t0qVB97fWAVm2fbj6",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "fEOeJtJZ-zuDtXei41FbA",
+      "endTableId": "EiU34bQe1gKSyhEt9WY63",
+      "endFieldId": "TmQWXYkIiObhiN3_ZHFhq",
+      "startFieldId": "iGZ7iic_XD33_eWKQZkt0",
+      "id": "dcE5vOKUK7cRtvZGox1Kp",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "OMxJlaaA_-ZjUn-HT_g8Z",
+      "endTableId": "B3TEkBBUVLMEB_l7rKbyz",
+      "endFieldId": "nSgoPaRDh4R6GKTlm6ce4",
+      "startFieldId": "jiSu7F84eaznWDjO1OqIv",
+      "id": "RL9mZl0a8uRXPrqKF362W",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "4erQKNB44tBNbQPnWnRIa",
+      "endTableId": "U9MB3SDaHksu3yTxjU58a",
+      "endFieldId": "XPKLiJxrje_AsNZHQEa2M",
+      "startFieldId": "zngdfloZh2nmsLgK5r3oA",
+      "id": "mjYnKx6swBjj-A81Nc8uH",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "nadceD4VL5DdGPrjL_gLi",
+      "endTableId": "IA1qUKN5ehorwG6jCf3UB",
+      "endFieldId": "Rx9INHGsXFbPWeNdvdBnK",
+      "startFieldId": "YxpBohh_ioV0XiotryUdX",
+      "id": "l6nlIWTte7YcsFp0_LEvP",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "nadceD4VL5DdGPrjL_gLi",
+      "endTableId": "svL3VUm1WjKwwsgA4suyh",
+      "endFieldId": "Dib6ti3NEExVPItnV7zxX",
+      "startFieldId": "2U8nSLWwftoYBXLizBv-l",
+      "id": "CFEMlvVtqoclKEv4_kqTN",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "nadceD4VL5DdGPrjL_gLi",
+      "endTableId": "LYJOV_9JIzeeCc0anu53z",
+      "endFieldId": "hKy70LJt-LMw0fxXQdyi1",
+      "startFieldId": "0XZRFW8fSIaWVOQxM9oew",
+      "id": "iLqP5koEA_W-PrOwUJlZ4",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "nadceD4VL5DdGPrjL_gLi",
+      "endTableId": "C95SSWrJHkbIUUm899hsA",
+      "endFieldId": "PXmBxk8u7R4Ol08aCFYar",
+      "startFieldId": "2_OPTTq29lmSr2q2AyUbk",
+      "id": "iYQDYdLxZt0rF5b1cEC6a",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "SFAcLbvFOKGtaitADAI-r",
+      "endTableId": "IA1qUKN5ehorwG6jCf3UB",
+      "endFieldId": "Rx9INHGsXFbPWeNdvdBnK",
+      "startFieldId": "Qt59GxOuWGXBATB4RXyGz",
+      "id": "sljZr-78keTx6gahCZPjB",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "SFAcLbvFOKGtaitADAI-r",
+      "endTableId": "fF_zIvWRZwt8vsQIabhlc",
+      "endFieldId": "epDSXdy6ICRcxbR7bT-RY",
+      "startFieldId": "-aap3JXAm5a-Xbxj7jYcV",
+      "id": "piYpH9p2J73VQ50JabfB9",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "SFAcLbvFOKGtaitADAI-r",
+      "endTableId": "fEOeJtJZ-zuDtXei41FbA",
+      "endFieldId": "iGZ7iic_XD33_eWKQZkt0",
+      "startFieldId": "PVxSybmx-ZNHU8tpaO4y7",
+      "id": "kUB6BJZ6s3NzbDPCOxu9h",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "FwiUNREkL1Aiba_uWjThC",
+      "endTableId": "IA1qUKN5ehorwG6jCf3UB",
+      "endFieldId": "Rx9INHGsXFbPWeNdvdBnK",
+      "startFieldId": "CuS6D6if3z3nT_KqA_Jdq",
+      "id": "jyMWfTnoU_CWIxnFZxavo",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "FwiUNREkL1Aiba_uWjThC",
+      "endTableId": "OMxJlaaA_-ZjUn-HT_g8Z",
+      "endFieldId": "jiSu7F84eaznWDjO1OqIv",
+      "startFieldId": "X-Bi4ChaBobzBNpOM7uBu",
+      "id": "98lhGFGfCn2uYVH00NToD",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "FwiUNREkL1Aiba_uWjThC",
+      "endTableId": "4erQKNB44tBNbQPnWnRIa",
+      "endFieldId": "zngdfloZh2nmsLgK5r3oA",
+      "startFieldId": "h8cKVIceStnCIHI-ddKZU",
+      "id": "a_9TSKujv95tae0eklqm8",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": " ",
+      "startTableId": "FwiUNREkL1Aiba_uWjThC",
+      "endTableId": "fEOeJtJZ-zuDtXei41FbA",
+      "endFieldId": "iGZ7iic_XD33_eWKQZkt0",
+      "startFieldId": "ad86o5WcCpG7d3up4zd9U",
+      "id": "DH-msZOFKt8ZoUKFZuERm",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    }
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "database": "generic",
+  "types": [],
+  "title": "schema E5"
+}
